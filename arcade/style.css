@@ -1,0 +1,38 @@
+body {
+  background-color: #000000;
+  color: lime;
+  font-family: 'Lucida Console', monospace;
+}
+h3, h5, h6, div {
+  padding: 0px;
+  margin: 0px;
+}
+:root {
+    --xt-bg: black;
+}
+:root {
+    --xt-fg: lime;
+}
+:root {
+    --xt-font-size: 1rem;
+}
+:root {
+    --xt-font-family: 'Lucida Console', monospace;
+}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+    --xt-font-family: 'Fira Code', monospace;
+}
+.xt-stdout {
+    line-height: 1.25;
+}
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.xt-cursor {
+    animation: blink 1s linear infinite;
+}

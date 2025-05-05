@@ -1,0 +1,62 @@
+.image-container {
+            height: 50vh;
+            overflow: hidden;
+            padding: 0;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .services-container {
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .services-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services-container li {
+            margin-bottom: 10px;
+        }
+        .services-container li a {
+            text-decoration: none;
+            color: white;
+        }
+        .description-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 50vw;
+            height: 50vh;
+            background-color: #f0f0f0;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .row {
+            margin: 0;
+            padding: 0;
+        }
+        .col-lg-6 {
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container-fluid {
+            padding: 0;
+        }
+        @media only screen and (max-width: 768px) {
+            .description-container {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+            .services-container {
+                height: auto;
+            }
+        }
