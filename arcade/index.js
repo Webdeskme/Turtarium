@@ -22,10 +22,15 @@ term.on('data', input => {
     } 
     else if (input == 'ls'){
 		term.writeln('-> 1: Simple Block Pushing Game');
+		term.writeln('-> 2: Lime Rick');
 	}
     else if (input == "1"){
         //window.open("../games/Simple Block Pushing Game.html", "_blank");
         window.location.href = "../games/Simple Block Pushing Game.html";
+    }
+    else if (input == "2"){
+        //window.open("../games/Simple Block Pushing Game.html", "_blank");
+        window.location.href = "../games/Lime Rick.html";
     }
     else if (input == "exit"){
         //window.open("../games/Simple Block Pushing Game.html", "_blank");
