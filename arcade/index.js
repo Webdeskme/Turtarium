@@ -23,6 +23,7 @@ term.on('data', input => {
     else if (input == 'ls'){
 		term.writeln('-> 1: Simple Block Pushing Game');
 		term.writeln('-> 2: Lime Rick');
+		term.writeln('-> 3: mtBrook Cipher');
 	}
     else if (input == "1"){
         //window.open("../games/Simple Block Pushing Game.html", "_blank");
@@ -31,6 +32,10 @@ term.on('data', input => {
     else if (input == "2"){
         //window.open("../games/Simple Block Pushing Game.html", "_blank");
         window.location.href = "../games/Lime Rick.html";
+    }
+    else if (input == "3"){
+        //window.open("../games/Simple Block Pushing Game.html", "_blank");
+        window.location.href = "../games/mtBrook/index.html";
     }
     else if (input == "exit"){
         //window.open("../games/Simple Block Pushing Game.html", "_blank");
