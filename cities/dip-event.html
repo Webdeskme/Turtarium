@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./dip.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "A dragon has been spotted in the nearby mountains!",
+                "A group of bandits has been terrorizing the local village.",
+                "A mysterious stranger has arrived in town, seeking information about a powerful artifact.",
+                "A severe storm is approaching, and the townspeople are preparing for the worst.",
+                "A local lord has announced a grand tournament, and knights from all over the kingdom are gathering to compete.",
+                "A group of travelers has gone missing in the nearby forest, and the authorities are seeking brave adventurers to investigate.",
+                "A powerful sorcerer has been seen in the area, and rumors are circulating about their intentions.",
+                "A hidden treasure has been discovered in the nearby ruins, and many are seeking to claim it.",
+                "A group of goblins has been raiding nearby farms, and the farmers are seeking protection.",
+                "A grand festival is being held in the nearby city, and many are traveling to attend.",
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./bellhorn.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body
