@@ -198,6 +198,10 @@ term.on('data', input => {
 		term.writeln('-> Password needs to be at least three charecters.');
 		term.writeln('-> Passwords and text only take capital letters, numbers, spaces, and periods.');
 		term.writeln('-> Type clear to clear the console.');
+		term.writeln('-> Type exit to go back to the arcade.');
+	}
+	else if (input == 'exit'){
+		window.location.href = "../../arcade/index.html";
 	}
     else if (password.length >= 3){
         // write the input
@@ -321,9 +325,10 @@ term2.on('data', input => {
     else if (input == 'help'){
 		term2.writeln('-> To decrypt make sure you type or copy in all of the text corectly.');
 		term2.writeln('-> Type clear to clear the console.');
+		term.writeln('-> Type exit to go back to the arcade.');
 	}
 	else if (input == 'exit'){
-		window.location.href = "../arcade/index.html";
+		window.location.href = "../../arcade/index.html";
 	}
 	else if (password.length >= 3){
 		input = input
