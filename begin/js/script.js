@@ -148,7 +148,7 @@ monogatari.script ({
 		'n When you are ready to start playing go to the home screen and click on the title of the game to be brought to the world map.',
 		'n You will always start your adventure from Bellhorn, your home town.',
 		'n That is all you need to know. Now click the "Back to Home" button to get back to the home screen.',
-		'end'
+		//'end'
 	]
 		/*{
 			'Choice': {

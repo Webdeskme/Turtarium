@@ -49,14 +49,28 @@
             <br>
             <label for="life-goal">Select a life goal:</label>
             <select id="life-goal" name="life-goal">
-                <option value="adventurer">Become an adventurer</option>
-                <option value="leader">Become a leader</option>
-                <option value="scholar">Become a scholar</option>
-                <option value="artist">Become an artist</option>
+                <option value="an adventurer">Become an adventurer</option>
+                <option value="a leader">Become a leader</option>
+                <option value="a scholar">Become a scholar</option>
+                <option value="an artist">Become an artist</option>
             </select>
             <br>
             <label for="back-story">Enter a back story:</label>
-            <textarea id="back-story" name="back-story"></textarea>
+            <!--<textarea id="back-story" name="back-story"></textarea>-->
+            <select id="back-story" name="back-story">
+                <option value="orphaned">Orphaned</option>
+                <option value="fisherman">Fisherman</option>
+                <option value="retired">Just retired</option>
+                <option value="student">Student</option>
+            </select>
+            <br>
+            <label for="mission-type">Select a mission type: (This is your core Mission at the beginning of the game)</label>
+            <select id="mission-type" name="mission-type">
+                <option value="rescue">Rescue</option>
+                <option value="infiltration">Infiltration</option>
+                <option value="sabotage">Sabotage</option>
+                <option value="reconnaissance">Reconnaissance</option>
+            </select>
             <br>
             <button id="generate-character">Generate Character</button>
             <br><br>
