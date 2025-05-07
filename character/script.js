@@ -3,69 +3,69 @@ const characterInfo = document.getElementById('character-info');
 
 const missionInfo = document.getElementById('mission-info');
 
-const missionTypes = {
-    rescue: {
+const const missionTypes = {
+    unity: {
         missions: [
-            "Rescue the captured scientist from the enemy's secret laboratory.",
-            "Save the hostages from the terrorist's hideout.",
-            "Extract the injured soldier from the battlefield.",
-            "Retrieve the stolen valuable artifact from the thief's lair.",
-            "Evacuate the civilians from the war-torn city."
+            "Unite the five turtle cities to form an Oceanic Accord and prevent a rising seaquake prophecy.",
+            "Forge peace between the surface dwellers and the people of The Great Dip.",
+            "Help each turtle city confront its greatest fear: famine, civil unrest, spiritual corruption, war, and memory loss.",
+            "Convince the wandering Moonkin to return to the ocean world with their lost wisdom.",
+            "Rebuild the Moonlight Bridge between The Great Dip and The Great Lift."
         ],
         rewards: [
-            "1000 gold and a boost to your reputation",
-            "500 gold and a new piece of equipment",
-            "2000 gold and a chance to recruit a new ally",
-            "1500 gold and a valuable resource",
-            "2500 gold and a unique item"
+            "The ability to speak directly with turtle elders through Dreamshell communion",
+            "A friendship so deep it can heal any wound, once per moon cycle",
+            "A companion who was once your rival, now bound to your journey",
+            "A boat that sails on trust and intent—able to reach forgotten islands",
+            "An ocean gem that allows glimpses into your companion’s memories"
         ]
     },
-    infiltration: {
+    discovery: {
         missions: [
-            "Infiltrate the enemy's headquarters to gather intel on their plans.",
-            "Sneak into the high-security facility to steal the top-secret documents.",
-            "Go undercover to gather information on the enemy's operations.",
-            "Infiltrate the enemy's communication network to disrupt their communications.",
-            "Sneak into the enemy's base to sabotage their equipment."
+            "Discover the true purpose of The Great Lift and uncover what caused its civilization to vanish.",
+            "Decode the ancient lunar script found in the lost domes of The Great Lift.",
+            "Find and reawaken the slumbering turtle city known only in myths: Shellhaven.",
+            "Complete the Ritual of Reflection to unlock the Mirror Path.",
+            "Sail beyond the known ocean to find the hidden truth of the world’s origin."
         ],
         rewards: [
-            "2000 gold and a new piece of equipment",
-            "1500 gold and a valuable resource",
-            "1000 gold and a boost to your reputation",
-            "2500 gold and a unique item",
-            "3000 gold and a chance to recruit a new ally"
+            "Access to an ancient lunar forge that reawakens memory-bound items",
+            "A mask from The Great Dip that shows others as they truly are",
+            "A seed from the First Garden on the moon—capable of growing into something mysterious",
+            "The Echo Pearl, which lets you hear ancient oceanic whispers",
+            "A map made of light and song that reveals itself through inner peace"
         ]
     },
-    sabotage: {
+    legacy: {
         missions: [
-            "Sabotage the enemy's equipment to disrupt their operations.",
-            "Destroy the enemy's supply chain to weaken their forces.",
-            "Disable the enemy's defenses to create an opening for attack.",
-            "Disrupt the enemy's communication network to create confusion.",
-            "Sabotage the enemy's transportation to limit their mobility."
+            "Craft the Oceanheart, a legendary relic to restore balance to the world.",
+            "Retrieve lost relics of the Turtle Kings from the depths of The Great Dip.",
+            "Document the oral histories of the ancient shell clans before they fade.",
+            "Reignite the Celestial Beacon once used to guide ships from the moon.",
+            "Create a new constellation in the Sky Archive with the moonlight stones."
         ],
         rewards: [
-            "1500 gold and a valuable resource",
-            "1000 gold and a boost to your reputation",
-            "2000 gold and a new piece of equipment",
-            "2500 gold and a unique item",
-            "3000 gold and a chance to recruit a new ally"
+            "A unique relic that binds sea, sky, and memory together",
+            "A chance to become part of the turtle cities' mythos as a Guardian of the Depths",
+            "The right to name and guide a newborn turtle city",
+            "Recognition by the Moon Archivists and access to their hidden knowledge",
+            "A starlit crest that protects you from despair and illusion"
         ]
     },
-    reconnaissance: {
+    bonds: {
         missions: [
-            "Conduct a reconnaissance mission to gather intel on the enemy's positions.",
-            "Gather information on the enemy's troop movements and deployments.",
-            "Identify the enemy's weaknesses and vulnerabilities.",
-            "Map out the enemy's territory to plan a future attack.",
-            "Gather intel on the enemy's plans and strategies."
+            "Help a companion confront a painful memory and grow stronger through it.",
+            "Repair the broken bond between two rival turtle clans through dialogue and ritual.",
+            "Deliver a long-lost letter from a sailor who vanished during The Great Drift.",
+            "Organize a shared festival across two cities that have never celebrated together.",
+            "Fulfill the dying wish of an old sea priest who once visited The Great Lift."
         ],
         rewards: [
-            "1000 gold and a boost to your reputation",
-            "500 gold and a new piece of equipment",
-            "2000 gold and a chance to recruit a new ally",
-            "1500 gold and a valuable resource",
-            "2500 gold and a unique item"
+            "A strengthened bond that unlocks a companion’s hidden ability",
+            "The ability to summon a companion in times of emotional need",
+            "A shared dream where a new power is born from unity",
+            "A story-song that makes others trust you instantly",
+            "A symbolic item imbued with deep emotional resonance"
         ]
     }
 };
@@ -199,23 +199,23 @@ form.addEventListener('submit', (e) => {
         <ul>
 			<li>Find somewere to write down your adventure, whether it is a notebook, or a word doc, as long as you are comfortable writing there.</li>
 			<li>Click "Begin" on the home screen.</li>
-			<li>When you are done reading the story then its time to make your charecters by clicking "Make Charecter"</li>
-			<li>After Making your main charecter and your three crew members, Go to the "Next Steps" section and click "Head to Bellhorn"</li>
+			<li>When you are done reading the story then its time to make your charecters by clicking "Make Charecter".</li>
+			<li>After Making your main charecter and your three crew members, Go to the "Next Steps" section and click "Head to Bellhorn".</li>
 		</ul>
         <h3>Gameplay:</h3>
         <ul>
 			<li>Once in town, you can click on town services.</li>
 			<li>You will Be given writing prumps. You can write in your journal as much or as little as you wish. Try to tie each prompt into the overall arch of your story.</li>
 			<li>Make sure to modify your stats as neccesary as you move through each prompt.</li>
-			<li>When you are ready to explore out of Bellhorn click "Back to Map". From There you can explore more of the world</li>
+			<li>When you are ready to explore out of Bellhorn click "Back to Map". From There you can explore more of the world.</li>
 			<li>Remember to add your own twist to the story. Does it cost something to move from town to town?</li>
-			<li>As you move through the story you might want a new mission or charecter. Both can be done by heading back to "Begin" on the home screen and then click "Make Charecter" or "Make Mission"</li>
+			<li>As you move through the story you might want a new mission or charecter. Both can be done by heading back to "Begin" on the home screen and then click "Make Charecter" or "Make Mission".</li>
 		</ul>
         <h3>Game Ends:</h3>
 		<ul>
 			<li>The game ends when you want it to.</li>
 			<li>It can be when you complete your lifes goal or an important mission.</li>
-			<li>It could also be when you fail a mision or lose all your health</li>
+			<li>It could also be when you fail a mision or lose all your health.</li>
 			<li>It is your story and you get to make the final call!</li>
 		</ul>
         <h4>For more information please visit the <a href="../encyclopedia/index.html" target="_blank">Encyclopedia</a>.</h4>
