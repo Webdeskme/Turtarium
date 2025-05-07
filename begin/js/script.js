@@ -133,6 +133,7 @@ monogatari.script ({
 		'show background news with fadeIn',
 		"",
 		"y See!",
+		"n Denstraw Sinks; Many Died, All Lost Their Homes",
 		"me Thats awful!",
 		'show background table with fadeIn',
 		'n Wow thats a lot to digest.',
