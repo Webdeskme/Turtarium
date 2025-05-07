@@ -3,7 +3,7 @@ const characterInfo = document.getElementById('character-info');
 
 const missionInfo = document.getElementById('mission-info');
 
-const const missionTypes = {
+const missionTypes = {
     unity: {
         missions: [
             "Unite the five turtle cities to form an Oceanic Accord and prevent a rising seaquake prophecy.",
