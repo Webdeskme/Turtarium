@@ -200,6 +200,7 @@ form.addEventListener('submit', (e) => {
 			<li>Find somewere to write down your adventure, whether it is a notebook, or a word doc, as long as you are comfortable writing there.</li>
 			<li>Click "Begin" on the home screen.</li>
 			<li>When you are done reading the story then its time to make your charecters by clicking "Make Charecter".</li>
+			<li>Your skills don't play directly in the game. You use them as a marker for how to react when playing.</li>
 			<li>After Making your main charecter and your three crew members, Go to the "Next Steps" section and click "Head to Bellhorn".</li>
 		</ul>
         <h3>Gameplay:</h3>
