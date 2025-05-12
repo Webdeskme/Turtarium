@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+		body {
+			background-color: #000000;
+		}
+		
+        .block {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .block:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .block {
+                height: 150px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <a href="./autism/about.html" class="col-md-4 block" style="background-color: #3498db;">Autism</a>
+            <a href="./autism/jobs.html" class="col-md-4 block" style="background-color: #2ecc71;">Job/School</a>
+            <a href="./autism/meditate.html" class="col-md-4 block" style="background-color: #9b59b6;">Meditation</a>
+        </div>
+        <div class="row">
+            <a href="./autism/nutrition.html" class="col-md-4 block" style="background-color: #1abc9c;">Health</a>
+            <a href="./autism/social.html" class="col-md-4 block" style="background-color: #f1c40f;">Social Skills/Community</a>
+            <a href="./autism/stimming.html" class="col-md-4 block" style="background-color: #e74c3c;">Stimming</a>
+        </div>
+    </div>
+</body>
+</html>

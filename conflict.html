@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turtarium</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .dice-box {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 60px;
+      background-color: #f8f9fa;
+      transition: background-color 0.3s ease;
+    }
+    .highlight {
+      background-color: #ffe082;
+    }
+    .result-message {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .rules {
+      background-color: #f1f1f1;
+      border-left: 5px solid #0d6efd;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body class="container py-4">
+  <h1 class="text-center mb-4">Conflict Resolver</h1>
+  <div class="d-flex justify-content-center mb-3">
+    <button id="rollBtn" class="btn btn-primary me-2">Roll Dice</button>
+    <button id="backBtn" class="btn btn-secondary">Back</button>
+  </div>
+
+  <div class="text-center mb-3">
+    <span id="dice1" class="dice-box border rounded me-2 d-inline-block"></span>
+    <span id="dice2" class="dice-box border rounded d-inline-block"></span>
+  </div>
+
+  <div class="row justify-content-center g-2 mb-4" id="grid">
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="0" /></div>
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="1" /></div>
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="2" /></div>
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="3" /></div>
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="4" /></div>
+    <div class="col-4"><input class="form-control text-center" type="text" readonly data-index="5" /></div>
+  </div>
+
+  <div class="text-center" id="solution"></div>
+  <div class="text-center result-message" id="result"></div>
+
+  <div class="rules mt-5">
+    <h4>How to Play</h4>
+    <ul>
+      <li>Press the <strong>Roll Dice</strong> button to roll the dice two at a time.</li>
+      <li>You must assign first the left die then the right die value to an <strong>empty box</strong> in the 3x2 grid.</li>
+      <li>Once a value is placed, it is locked in and cannot be changed.</li>
+      <li>After all six boxes are filled, the top row forms a 3-digit number and so does the bottom row.</li>
+      <li>The bottom 3-digit number is subtracted from the top 3-digit number.</li>
+    </ul>
+    <h5>Outcomes</h5>
+    <ul>
+	  <li><strong>Devastating Loss</strong>: If the result is less than 0.</li>
+      <li><strong>You Lose</strong>: If the result is greater than 99.</li>
+      <li><strong>You Tie</strong>: If the result is between 11 and 99 (inclusive).</li>
+      <li><strong>You Win</strong>: If the result is between 1 and 10 (inclusive).</li>
+      <li><strong>Sweeping Victory</strong>: If the result is exactly 0.</li>
+    </ul>
+  </div>
+
+  <script>
+    const rollBtn = document.getElementById('rollBtn');
+    const backBtn = document.getElementById('backBtn');
+    const dice1 = document.getElementById('dice1');
+    const dice2 = document.getElementById('dice2');
+    const inputs = document.querySelectorAll('#grid input');
+    const result = document.getElementById('result');
+    const solution = document.getElementById('solution');
+
+    let currentRoll = [];
+
+    function rollDie() {
+      return Math.floor(Math.random() * 6) + 1;
+    }
+
+    function highlightDice() {
+      dice1.classList.remove('highlight');
+      dice2.classList.remove('highlight');
+      if (currentRoll.length > 0) dice1.classList.add('highlight');
+      if (currentRoll.length > 1) dice2.classList.add('highlight');
+    }
+
+    function resetGame() {
+      inputs.forEach(input => {
+        input.value = '';
+        input.classList.remove('disabled');
+        input.disabled = false;
+      });
+      result.textContent = '';
+      solution.textContent = '';
+      dice1.textContent = '';
+      dice2.textContent = '';
+      dice1.classList.remove('highlight');
+      dice2.classList.remove('highlight');
+      currentRoll = [];
+    }
+
+    function evaluateResult() {
+      const topRow = Array.from(inputs).slice(0, 3).map(input => input.value).join('');
+      const bottomRow = Array.from(inputs).slice(3).map(input => input.value).join('');
+      const topNum = parseInt(topRow, 10);
+      const bottomNum = parseInt(bottomRow, 10);
+      const diff = topNum - bottomNum;
+
+      solution.textContent = `${topNum} - ${bottomNum} = ${diff}`;
+	  if (diff < 0){
+		result.textContent = 'Devastating Loss';
+        result.classList.add('text-danger');
+	  }
+      else if (diff > 99) {
+        result.textContent = 'You Lose';
+        result.classList.add('text-danger');
+      } else if (diff === 0) {
+        result.textContent = 'Sweeping Victory';
+        result.classList.remove('text-danger');
+      } else if (diff >= 11) {
+        result.textContent = 'You Tie';
+        result.classList.remove('text-danger');
+      } else {
+        result.textContent = 'You Win';
+        result.classList.remove('text-danger');
+      }
+    }
+
+    rollBtn.addEventListener('click', () => {
+      const emptyInputs = Array.from(inputs).filter(input => input.value === '');
+      if (emptyInputs.length < 2) return;
+
+      const val1 = rollDie();
+      const val2 = rollDie();
+      dice1.textContent = val1;
+      dice2.textContent = val2;
+
+      currentRoll = [val1, val2];
+      highlightDice();
+    });
+
+    inputs.forEach(input => {
+      input.addEventListener('click', () => {
+        if (input.value !== '' || currentRoll.length === 0) return;
+
+        const valueToPlace = currentRoll.shift();
+        input.value = valueToPlace;
+        input.disabled = true;
+        input.classList.add('disabled');
+
+        if (currentRoll.length === 0) {
+          highlightDice();
+          dice1.classList.remove('highlight');
+          dice2.classList.remove('highlight');
+
+          const filledInputs = Array.from(inputs).filter(input => input.value !== '');
+          if (filledInputs.length === 6) {
+            evaluateResult();
+          }
+        } else {
+          highlightDice();
+        }
+      });
+    });
+
+    backBtn.addEventListener('click', resetGame);
+  </script>
+</body>
+</html>

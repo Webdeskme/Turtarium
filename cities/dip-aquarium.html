@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./aquarium.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                "‘I swear that jellyfish just winked at me… or maybe it knows something I don’t.’",
+				"‘My heart slows down every time the leviathan glides by. It’s like the ocean breathing.’",
+				"‘I brought my son here so he’d remember where we came from—this city, this magic… this peace.’",
+				"‘They say the coral here sings at night if you press your ear to the glass. I believe them.’",
+				"‘Every fish is like a floating prayer. Silent, beautiful, fleeting.’",
+				"‘Look at that one! No bigger than my thumb and glowing like a star. Makes you feel small, doesn’t it?’",
+				"‘The sea doesn’t need words. Just movement, light, and time.’",
+				"‘Do you think the creatures on the other side are watching *us* like we’re in a tank?’",
+				"‘When I was a child, I thought the sea was endless. Now I know—it is.’",
+				"‘Sometimes I come here just to remember that not everything needs fixing. Some things just are.’",
+				"‘My grandmother used to tell me sea spirits would appear behind the glass when you weren’t looking. I’m still hoping to catch one.’",
+				"‘This one fish has followed me to every window. Either it likes me… or I look like dinner.’",
+				"‘If peace had a color, it would be the blue in this room right now.’",
+				"‘She held my hand right here before she left for the surface. I think of her every time I come.’",
+				"‘The shadows of those rays… they look like wings. I wonder if the sea ever dreams of flying.’"
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./dip.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>

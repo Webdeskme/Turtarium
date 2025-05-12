@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./sunset.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                 "The sun will rise, no matter the night, Darkness fades in the face of light. Hope is born with each new day, Greet the dawn and find your way.",
+				"A seed beneath the frozen ground, Waits for warmth without a sound. One day blooms with vibrant grace, Proving time brings every place.",
+				"You are not lost, just yet unseen, A diamond trapped inside the seam. Pressure builds but do not fear, Greatness grows when you persevere.",
+				"Storms may shake the tallest tree, But roots hold strong beneath the sea. Endure the wind, embrace the rain, And you'll rise, reborn again.",
+				"Not all who wander lose their way, Some just seek a brighter day. Trust your path, though winding, slow— Every step is how we grow.",
+				"A single spark can light the sky, When doubts are low and spirits high. You hold a flame the world can see— Let it burn and set you free.",
+				"Mountains stand and rivers bend, All beginnings have their end. But in each end a door is new— Adventure waits, and so do you.",
+				"Carry light, though nights are long, Sing your truth, a quiet song. The world may echo, loud and wild— Still, listen close: you're nature's child."
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./ocean.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./brinemaw.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "As you lean on the rail of the Brinemaw docks, a sailor hands you a weathered seashell and says, 'She sings if you're meant to leave.' What do you hear inside it?",
+  
+  "You pass by the mermaid fountain in the town square, and for a fleeting moment, it looks directly at you. What do you feel in that gaze—and what tale might she whisper to you?",
+  
+  "A storm is brewing, but the market bustles anyway. Amid the chaos, someone slips you a sealed letter marked with a coral crest. What does it say, and who sent it?",
+  
+  "A sea-worn captain tells you he remembers you from another life, another voyage. Do you believe him—and what story does he tell?",
+  
+  "You find an old spyglass at a stall in the harbor market. When you peer through it, you don’t see the sea—you see a memory. What is it?",
+  
+  "A ship called the *Wailing Star* has docked in Brinemaw, and no one saw it arrive. You're the first to step aboard. What do you find in its silent hull?",
+  
+  "The tavern near the watchtower roars with tales of sea beasts and sunken treasure. A voice behind you says, 'One of those tales is yours.' Which one—and how does it end?",
+  
+  "A curious sailor offers to read your fortune with sea stones under the moonlight. What do the stones reveal about your path?",
+  
+  "A young dockhand gives you a map, but says, 'This only works if you're missing something.' What are you missing—and where does the map lead?",
+  
+  "The wind at Brinemaw carries scents and sounds from beyond the horizon. One evening, it brings a name—spoken so clearly it startles you. Whose name is it?",
+  
+  "As you explore a tide-washed alley behind the market, you stumble upon a secret meeting. Who is gathered there, and what forbidden plan do you overhear?",
+  
+  "You board a ship in Brinemaw bound for another turtle city—but a storm reroutes you. What happens on that unexpected journey?",
+  
+  "A fisherman tells you the sea is remembering something—and it’s using you to do it. What memory are you being pulled toward?",
+  
+  "The mermaid statue goes missing overnight. When it returns, it’s holding something new in its hand. What is it—and what does it mean?",
+  
+  "You’re invited to a midnight toast atop the old watchtower with a group of storm-chasers. What pact is made there beneath the stars?",
+  
+  "While watching the tide roll in, a child nearby hums a melody that stirs an ancient sorrow in you. Why does it feel so familiar?",
+  
+  "An old shipwreck washes ashore. You’re among the first to investigate. What strange relic do you find lodged within its splintered hull?",
+  
+  "The sailors speak of a ghost ship seen just beyond Brinemaw’s harbor at dusk. One day, you see it too—and it signals to you. What do you do?",
+  
+  "A trader offers to barter a strange item: a compass that doesn’t point north, but to something you’ve long avoided. What do you trade—and where does it point?",
+  
+  "A festival honoring the Sea Mother is underway. You’re asked to make an offering—but what you give must come from your deepest fear. What do you offer, and why?"
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./brinemaw.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body

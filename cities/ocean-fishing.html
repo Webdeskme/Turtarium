@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./fishing.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                "You cast your line into the open ocean—and reel in something shimmering with scales... but it's not a fish. What is it, and what happens next?",
+			  
+			  "A sudden tug on your line nearly pulls you into the water. You manage to hold on and pull out... a chest encrusted with coral and barnacles. What’s inside?",
+			  
+			  "A fog rolls in while you’re fishing, and when it lifts, you’re no longer in the same place. Describe what you see and how you feel.",
+			  
+			  "As the sun sets, a song rises from beneath the waves. You follow the sound and see a mermaid sitting on the rocks. What does she say to you?",
+			  
+			  "You pull up a fish with golden eyes and a strange marking on its side. The marking looks like part of a map. What will you do?",
+			  
+			  "A stranger rows up beside your boat, offering you an ancient fishing hook. They say it only catches what your soul is searching for. What do you catch?",
+			  
+			  "Your fishing line snags something heavy. You pull and pull—until an old bottle emerges with a rolled parchment inside. What does the message say?",
+			  
+			  "You fall asleep while fishing and wake up to find your boat surrounded by glowing jellyfish. They're moving in a pattern—almost like they're guiding you. Where do they lead?",
+			  
+			  "As you're fishing, a storm suddenly forms—but only around your boat. Lightning crackles in a spiral above you. What or who is causing it?",
+			  
+			  "You catch a fish that speaks just one word before jumping back into the water. That word echoes in your mind. What is the word, and what does it mean?",
+			  
+			  "Your lure is taken and the water turns unusually still. A massive eye opens just beneath the surface. What do you do?",
+			  
+			  "A small, barnacle-covered statue of a sea creature comes up with your hook. As you hold it, memories not your own begin to surface. Whose memories are they?",
+			  
+			  "While fishing, you discover a second, smaller boat has tied itself to yours with no one aboard. Inside is a journal with entries that seem to describe your exact day… even events that haven’t happened yet.",
+			  
+			  "You pull up a fish made entirely of light, and as it fades, you’re left with a vision of a hidden place beneath the waves. What did you see?",
+			  
+			  "A pod of dolphins swims by and drops something at the side of your boat—a silver coin with an unknown symbol. What is its significance?",
+			  
+			  "You cast your line and feel a bite, but instead of pulling back, you get pulled under—into a world beneath the sea. What do you find there?",
+			  
+			  "A lighthouse in the distance flashes a strange rhythm while you're fishing. You realize it's Morse code. What message is it sending?",
+			  
+			  "You fish up an antique compass that spins wildly, then suddenly points to a direction that isn’t north. What lies that way?",
+			  
+			  "As you're fishing at night, a star falls from the sky and lands near your boat, sizzling on the surface of the water. What do you do with it?",
+			  
+			  "You reel in a message in a bottle addressed to someone with your name. The message is written in your own handwriting. What does it say?"
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./ocean.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>

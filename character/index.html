@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Character Generator</h1>
+        <p>You are the captain of your own ship. You have a crew of three at the begining of the game. Use this gerator to make the stats for you and your crew mates.</p>
+        <form id="character-form">
+            <label for="race">Select your character's race:</label>
+            <select id="race" name="race">
+                <option value="human">Human</option>
+                <option value="aviari">Aviari</option>
+                <option value="haydori">Haydori</option>
+                <option value="merrows">Merrows</option>
+            </select>
+            <br>
+            <label for="skills">Select three skills:</label>
+            <select id="skill1" name="skill1">
+                <option value="strength">Strength</option>
+                <option value="dexterity">Dexterity</option>
+                <option value="intelligence">Intelligence</option>
+                <option value="charisma">Charisma</option>
+            </select>
+            <!--<select id="skill2" name="skill2">
+                <option value="strength">Strength</option>
+                <option value="agility">Agility</option>
+                <option value="intelligence">Intelligence</option>
+                <option value="charisma">Charisma</option>
+            </select>
+            <select id="skill3" name="skill3">
+                <option value="strength">Strength</option>
+                <option value="agility">Agility</option>
+                <option value="intelligence">Intelligence</option>
+                <option value="charisma">Charisma</option>
+            </select>-->
+            <br>
+            <label for="disability">Select a disability:</label>
+            <select id="disability" name="disability">
+                <option value="strength">Strength</option>
+                <option value="dexterity">Dexterity</option>
+                <option value="intelligence">Intelligence</option>
+                <option value="charisma">Charisma</option>
+            </select>
+            <br>
+            <label for="life-goal">Select a life goal:</label>
+            <select id="life-goal" name="life-goal">
+                <option value="an adventurer">Become an adventurer</option>
+                <option value="a leader">Become a leader</option>
+                <option value="a scholar">Become a scholar</option>
+                <option value="an artist">Become an artist</option>
+            </select>
+            <br>
+            <label for="back-story">Enter a back story:</label>
+            <!--<textarea id="back-story" name="back-story"></textarea>-->
+            <select id="back-story" name="back-story">
+                <option value="orphaned">Orphaned</option>
+                <option value="fisherman">Fisherman</option>
+                <option value="retired">Just retired</option>
+                <option value="student">Student</option>
+            </select>
+            <br>
+            <label for="mission-type">Select a mission type: (This is your core Mission at the beginning of the game)</label>
+            <select id="mission-type" name="mission-type">
+                <option value="unity">Unity</option>
+                <option value="discovery">Discovery</option>
+                <option value="legacy">Buid a Legacy</option>
+                <option value="bonds">Strengthan Bonds</option>
+            </select>
+            <br>
+            <button id="generate-character">Generate Character</button>
+            <br><br>
+            <button id="refresh-button" style="background-color: red; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;" onclick="location.reload()">Refresh</button>
+            <br><br>
+            <a href="../index.html"><b>Go Back</b></a>
+        </form>
+        <div id="character-info"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

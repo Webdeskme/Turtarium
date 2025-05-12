@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./cavewood.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "Upon entering Cavewood, you’re asked to recite a memory that shaped you. What do you share—and how does it echo through the city’s silent halls?",
+  
+  "You stand before the statue of King Eldric the Keeper. As the wind stirs the leaves around it, you feel an unspoken question in the air. How do you answer?",
+  
+  "In a dim study beneath the hilltop sanctum, a monk gives you a scroll that seems to reference you—though it was written generations ago. What does it say?",
+  
+  "As you climb the winding path to the observatory, you hear a voice—faint, familiar, and impossible. Who is it, and what do they say?",
+  
+  "An archivist shows you a constellation that has changed since Denstraw sank. What is the significance, and what omen do the stars reveal?",
+  
+  "You attend a silent reading circle where every participant must reflect inwardly rather than speak. What truth or memory surfaces as you read?",
+  
+  "Inside the domed sanctum, you are invited to place your hand on the ‘Stone of Remembering.’ What vision or sensation overwhelms you when you do?",
+  
+  "A cypress tree near the village weeps sap the color of starlight. Locals say it mourns something. What does it remind you of—and what do you leave at its roots?",
+  
+  "You find a book in the Cavewood archives that mentions a hidden chamber beneath Bellhorn Castle. What do you do with this knowledge?",
+  
+  "A scholar grieving someone lost in Denstraw shares a ritual of remembrance with you. How do you participate, and what do you both gain from it?",
+  
+  "The children of Cavewood play a strange, silent game in the square involving stones and candlelight. One invites you to play. What do you learn by joining in?",
+  
+  "You’re offered a choice between two paths: one leads to forgotten truths, the other to comfortable lies. Which do you take—and how does it change your view of the world?",
+  
+  "As fog drapes the forest, you see a figure beneath the trees who seems out of time—perhaps even out of place. Who are they, and what message do they carry?",
+  
+  "You attend a moonlit ceremony where the town’s mystics chant the names of lost cities. When Denstraw is named, what collective emotion floods the circle?",
+  
+  "You awaken in the guesthouse with someone else’s dream echoing in your mind. What was it—and why does it feel like a warning?",
+  
+  "The bells of the tower chime a melody long forbidden. An elder takes your hand and asks if you will help complete a task left unfinished for centuries. Do you accept?",
+  
+  "A visiting philosopher challenges you to a debate not of facts, but of purpose. What topic do you choose, and what do you realize about yourself in the exchange?",
+  
+  "You uncover a painted mural beneath layers of moss in an abandoned garden. It shows Cavewood, but in a way you've never seen before. What is different—and what does it mean?",
+  
+  "Someone in Cavewood keeps calling you by a different name—as if they knew you before. Who are they, and what truth are they holding back?",
+  
+  "On the eve of your departure, a scholar gifts you a sealed letter with instructions to open it only in dire need. What do you feel as you slip it into your pack?"
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./cavewood.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body

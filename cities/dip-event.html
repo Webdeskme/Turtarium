@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./dip.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "Describe your first moments after emerging from the Veil of Currents. What did you see? Who did you meet? How did it feel to breathe underwater?",
+  
+  "You visit a market stall run by a mermaid who offers memories for trade. What do you give up, and what do you gain in return?",
+  
+  "In a quiet courtyard, a school of glowing fish surrounds you in a perfect circle. For a moment, time stops. What truth is revealed in their silent gaze?",
+  
+  "You meet a fish-folk child who claims to know your future. They offer to tell you, but only if you play a game with them first. What happens next?",
+  
+  "A coral-crafted innkeeper shares a rumor: someone who left the city tried to return and failed. What is it about leaving The Great Dip that changes you?",
+  
+  "You sit by a kelp-garden fountain where music is made by drifting seashells. A stranger joins you and speaks of lost homes. What story do you share in return?",
+  
+  "One night, the waters turn silver and the streets hum with an ancient tune. Locals call it 'The Sea's Memory'. What vision or message do you receive during this event?",
+  
+  "You help repair a magical barrier that protects the city from deep sea beasts. During the task, you glimpse something massive lurking beyond the edge of visibility. What do you think it was?",
+  
+  "A local artist invites you to contribute to a mural made entirely of bioluminescent moss. What do you add—and what does it mean to you?",
+  
+  "A wise sea-tortoise teaches you how to 'listen to the ocean’s dreams'. What do you hear in the deep silence between tides?",
+  
+  "You stumble upon a hidden alcove of memorial stones, each carved with the name of someone who chose never to return to the surface. One of the names stands out. Why?",
+  
+  "You attend a multi-species celebration of the Moon Tide festival. What tradition moves you most—and how do your companions react to it?",
+  
+  "In the quiet hours before dawn, you find yourself alone with a merperson who is mourning a lost love. How do they help you better understand your own heart?",
+  
+  "A mysterious current pulls you briefly into a part of the city that seems forgotten. Who lives there—and why are they hidden?",
+  
+  "You meet a being who claims to have once been part of the surface world, but who now remembers nothing of air. What do they teach you about letting go?",
+  
+  "Your group is asked to resolve a dispute between merfolk and humans over a shared temple. How do you mediate, and what is the cost of peace?",
+  
+  "A mirror pool reveals the version of yourself you might have become if you’d never left home. What do you feel when you look into it?",
+  
+  "You discover a seashell journal left behind by a past traveler. As you read it, you realize they walked a path much like yours. What warning or wisdom do they leave you?",
+  
+  "While exploring the coral catacombs beneath the city, you find a relic of The Great Lift buried deep in the sand. How did it get here?",
+  
+  "On your last day in The Great Dip, someone you've come to care for asks you to stay. Do you consider it—and what would staying mean for your journey?"
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./dip.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./clearstall.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "The Clearstall clocktower chimes as you step into town. Each note stirs a memory—one you hadn’t recalled in years. What is it, and why now?",
+  
+  "You pause on one of Clearstall’s arched bridges at dusk. The water below reflects something you didn’t expect. What do you see, and how does it affect you?",
+  
+  "A local artisan invites you to help craft a piece of pottery said to ‘capture the soul of a moment.’ What moment do you choose—and what emotion does the piece hold?",
+  
+  "A child offers you a hand-painted stone from a basket labeled ‘forgotten dreams.’ What symbol is painted on yours, and how does it resonate with your journey?",
+  
+  "As you pass under an ivy-covered archway, a breeze carries a story half-whispered by an old tower. What words do you hear—and who might they be for?",
+  
+  "A wandering storyteller recounts a tale that suspiciously mirrors your own life—but with a different ending. How do you respond?",
+  
+  "While visiting a candle-maker’s shop, you’re told to choose a scent that speaks to your soul. Which do you pick, and what memory floods back to you?",
+  
+  "You stay the night at a timber-framed inn where time seems to slow. What strange or significant dream finds you while you sleep?",
+  
+  "A clockmaker shows you a broken timepiece said to once count ‘moments of importance.’ When you hold it, which moment in your life does it tick toward?",
+  
+  "On a quiet walk through the evergreen hills behind Clearstall, you stumble upon a forgotten bench with initials carved into it—one set is yours. What story does it hold?",
+  
+  "You are invited to write a passage in the town’s memory book, stored in a tower vault. What do you write, and why is it important to preserve?",
+  
+  "A lamp-lighter tells you that one of the street lamps glows with the spirit of a long-lost love. Which lamp is it, and what feeling does it awaken in you?",
+  
+  "A painting in the town square depicts Clearstall as it once was—with someone who looks just like you. What questions does this raise?",
+  
+  "A baker gives you a loaf shaped like a shell, saying it’s a Clearstall tradition for those who carry burdens. What burden do you name—and how does sharing it change you?",
+  
+  "A faint chime at midnight echoes through Clearstall and draws you to the clocktower. What (or who) awaits you there, and what truth do they reveal?",
+  
+  "You find a letter tucked behind a stone in the tower wall. It begins ‘To the one who remembers…’ What does the letter say—and why do you feel it was meant for you?",
+  
+  "An elder invites you to a ‘quiet circle’—a silent gathering for reflection beneath the twin turrets. What thoughts surface in the stillness?",
+  
+  "You visit a forgotten courtyard where shadows play against murals of former townsfolk. One figure moves ever so slightly when you look away. What do you do?",
+  
+  "A weaver offers to craft you a cloak of memory, but only if you can describe the moment that defined your courage. What do you tell them?",
+  
+  "You spend a morning painting with local artists. Your brush seems to move on its own—what scene does it create, and what emotion does it unlock within you?"
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./clearstall.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body

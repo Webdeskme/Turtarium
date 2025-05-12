@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./restaurant.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                "Describe the atmosphere of the restaurant in The Great Dip. What sounds, smells, and sights make it unique beneath the sea?",
+				"Who are you sharing this meal with, and what makes them important to you? How do you feel being here with them?",
+				"The server brings a dish glowing faintly with bioluminescence. What is it? Describe how it tastes and the story behind the recipe.",
+				"In the middle of your meal, someone nearby begins to sing a haunting oceanic ballad. How does it affect the mood and your conversation?",
+				"As you speak with your companion, they reveal something surprising or emotional. How do you respond?",
+				"The walls of the restaurant are lined with shimmering coral art. One piece catches your eye—what does it remind you of?",
+				"A passing sea-creature swims by the translucent window and locks eyes with you. Does it stir a memory or feeling?",
+				"Your companion gives you a small gift at the end of the meal. What is it, and what does it mean to you?",
+				"You overhear a nearby table discussing rumors about a lost treasure near The Great Dip. Do you get involved?",
+				"The chef comes out to greet you and tells you the origin of the restaurant. What is the story, and how does it connect with you?",
+				"As the meal ends, your companion asks you a difficult question. What is it, and how do you answer?",
+				"Write about a moment during the meal when everything felt perfectly at peace. Why do you think you’ll remember this forever?",
+				"Describe the way your companion looked at you during the meal. Was it filled with hope, sorrow, laughter, or something else?",
+				"You and your companion toast to something. What is it you’re celebrating or hoping for in the future?"
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./dip.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>

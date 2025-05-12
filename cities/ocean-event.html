@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./ocean.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const events = [
+                "The ocean is calm, glassy, and stretches forever. Describe the feeling of being utterly alone in this vast stillness.",
+  
+			  "Dark storm clouds build on the horizon. You have only minutes before it hits. What thoughts go through your mind as the first drops fall?",
+			  
+			  "The sea is unusually warm, and the skies perfectly clear. Something about it feels unnatural. What do you sense beneath the surface?",
+			  
+			  "You spot a distant shipwreck half-submerged on a sandbar that shouldn't exist. What do you find when you explore it?",
+			  
+			  "A thick fog surrounds your vessel, and when it lifts, you see a massive, abandoned cruise ship drifting silently. What do you discover onboard?",
+			  
+			  "The ocean glows with bioluminescence at night, and your wake leaves streaks of light. Suddenly, the glow takes shape. What do you see?",
+			  
+			  "You find yourself caught in the eye of a massive hurricane, but it’s strangely calm in the center. What happens as you try to leave it?",
+			  
+			  "A floating message in a bottle bumps against your boat. The note inside is a warning from the past—or the future. What does it say?",
+			  
+			  "You're out of sight of land for days when a small wooden canoe appears beside you with a child inside, silently pointing west. What do you do?",
+			  
+			  "An albatross follows your boat for days without leaving. It begins to feel like a sign. What meaning do you attach to it?",
+			  
+			  "The sun rises in the west instead of the east today. You feel like something has shifted. What’s different now?",
+			  
+			  "A perfect rainbow arcs directly over your boat, and at its end floats a tiny island that wasn’t there before. What’s on the island?",
+			  
+			  "You wake to find your boat has been tethered to another while you slept. There's no one aboard the other vessel. What do you find inside?",
+			  
+			  "A deep rumble sounds from beneath your boat, like something ancient moving through the water. What do you do?",
+			  
+			  "A pod of whales surrounds your vessel, swimming in synchronized circles. Then one of them surfaces with an object on its back. What is it?",
+			  
+			  "You're becalmed for days—no wind, no current. As you drift, strange dreams begin to plague your sleep. What are the dreams, and what do they mean?",
+			  
+			  "Lightning strikes nearby, revealing a ghostly ship in the darkness. Each flash brings it closer. What happens when it reaches you?",
+			  
+			  "The ocean begins to rise, slowly but surely, higher than it should. You see waves towering on the horizon like a wall. What do you do?",
+			  
+			  "A perfect storm crashes around you, but your boat remains untouched. In the chaos, you glimpse a colossal sea creature guiding you. Why?",
+			  
+			  "You find a small floating crate tied with a red ribbon. Inside is something you’ve lost—something deeply personal. What is it, and how did it get here?",
+			  
+			  "Your radio crackles to life, broadcasting your own voice back to you—but from a time and place you don’t remember. What is it saying?",
+			  
+			  "You sail into an area where all your instruments fail, and the stars above are completely unfamiliar. Where are you?",
+			  
+			  "You drop anchor for rest, and in the morning, you’re moored to a floating garden filled with fruit trees and birds. Is it real?",
+			  
+			  "You’re approached by a sailor in a tiny boat who claims he's been at sea for a hundred years and offers you something. Do you take it?",
+			  
+			  "A flock of seabirds begins circling your boat, never landing or leaving. You count exactly fifty. What do they mean?",
+			  
+			  "You dive into the water to cool off and find an underwater staircase leading downward into darkness. Do you follow it?",
+			  
+			  "The sun never sets one day, and the light becomes almost too bright to bear. What effect does this have on you and the ocean?"
+            ];
+            
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+            document.write(`<p class="event-text">${randomEvent}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./ocean.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body
