@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./tavern.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                "You overhear a group of sailors discussing a recent shipwreck on the coast. What do they say, and how does it make you feel?",
+  "A traveling merchant approaches you and offers to trade a rare seashell for a story about your travels. What do you tell them, and what do you learn about their journey?",
+  "You strike up a conversation with a local fisherman who shares tales of the sea's secrets and dangers. What do they reveal, and how does it change your perspective on the ocean?",
+  "A group of rowdy traders burst into the tavern, celebrating a successful deal. What are they celebrating, and how do you get drawn into their revelry?",
+  "You notice a mysterious stranger sitting in the corner of the tavern, sipping a mug of grog. What do you learn about them, and what secrets do they reveal?",
+  "The tavernkeeper regales you with stories of Brinemaw's history and the legends of the mermaid fountain. What do you learn, and how does it deepen your connection to the town?",
+  "A young apprentice approaches you, seeking advice on how to navigate the complexities of the town's trade guilds. What guidance do you offer, and what do you learn about their aspirations?",
+  "You engage in a heated debate with a group of sailors about the best route to take for a upcoming voyage. What are the arguments for and against each route, and how do you resolve the discussion?",
+  "A local legend tells a tale of a hidden treasure buried beneath the waves. What do they say, and how does it spark your imagination?",
+  "You meet a fellow traveler who has just arrived in Brinemaw, seeking refuge from a stormy sea. What is their story, and how do you help them settle into the town?",
+  "The tavern erupts into a lively sea shanty, with patrons singing and dancing together. What is the song about, and how do you join in?",
+  "You discover a cryptic message scrawled on the wall of the tavern, hinting at a long-forgotten secret. What does it say, and how do you decipher its meaning?",
+  "A group of townspeople gather to discuss the recent strange occurrences in the town's harbor. What are they talking about, and how do you contribute to the conversation?",
+  "You are approached by a representative of the town's council, seeking your opinion on a proposed new tax on imported goods. What do you say, and how do you justify your position?",
+  "A charismatic performer takes the stage, telling tales of mythical sea creatures and legendary heroes. What is their story, and how does it captivate the audience?",
+  "You strike up a conversation with a gruff but lovable old sailor, who regales you with stories of his adventures on the high seas. What do you learn from him, and how does it inspire you?",
+  "The tavern is filled with the smell of freshly baked bread and roasting meats, and you are offered a taste of the tavernkeeper's famous seafood stew. What do you think of the flavors, and how does it remind you of home?",
+  "A group of travelers arrive in town, seeking information about a rumored underwater ruin. What do they hope to find, and how do you help them on their quest?",
+  "You are invited to join a group of locals on a fishing trip, and you spend the day out on the water, learning about the town's fishing traditions. What do you catch, and how does the experience make you feel?",
+  "The tavern is filled with music and laughter, and you are swept up in a lively game of dice with a group of rowdy sailors. What is the stakes, and how do you fare in the game?"
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./bellhorn.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+		body {
+			background-color: #000000;
+		}
+        .shop {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        
+        .item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .item-price {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .item-description {
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shop">
+            <h1>Bakery & Sweet Shop</h1>
+            <h4><a href="bellhorn.html">Back to Town</a></h4>
+            <script>
+                const items = [
+                    { name: "Freshly Baked Bread", price: 5, description: "A warm, crusty loaf of bread perfect for snacking or making sandwiches." },
+  { name: "Sugar Cookies", price: 10, description: "A batch of sweet, chewy cookies made with sugar, butter, and love." },
+  { name: "Fruit Tarts", price: 15, description: "A selection of sweet and tangy tarts filled with fresh fruit and topped with a crumbly crust." },
+  { name: "Wedding Cake", price: 50, description: "A majestic, multi-tiered cake perfect for special occasions and celebrations." },
+  { name: "Gingerbread Men", price: 8, description: "A batch of spicy, sweet gingerbread men perfect for snacking or decorating." },
+  { name: "Cinnamon Rolls", price: 12, description: "A tray of sweet, gooey cinnamon rolls topped with a crunchy sugar coating." },
+  { name: "Honey Cakes", price: 18, description: "A selection of sweet, moist cakes made with pure honey and topped with a crunchy nut coating." },
+  { name: "Pastry Box", price: 25, description: "A assortment of sweet and savory pastries, perfect for a quick snack or as a gift." },
+  { name: "Cake Decorating Kit", price: 30, description: "A comprehensive kit containing everything you need to decorate your own cakes, including frosting, sprinkles, and tips." },
+  { name: "Bread Basket", price: 20, description: "A wicker basket filled with a selection of freshly baked breads, perfect for a picnic or as a gift." },
+  { name: "Dragon's Breath Chili Cake", price: 40, description: "A spicy, fiery cake made with dragon's breath chili peppers and topped with a crunchy sugar coating." },
+  { name: "Unicorn Tears Macarons", price: 50, description: "A batch of delicate, chewy macarons made with unicorn tears and flavored with rose petal and lemon." },
+  { name: "Mermaid's Kiss Meringues", price: 35, description: "A selection of light, airy meringues made with mermaid's kiss sugar and flavored with sea salt and vanilla." },
+  { name: "Phoenix Fire Cookies", price: 45, description: "A batch of spicy, sweet cookies made with phoenix fire peppers and topped with a crunchy sugar coating." },
+  { name: "Fairy Floss", price: 30, description: "A sweet, fluffy treat made with fairy dust and flavored with rose petal and lemon." },
+  { name: "Flour", price: 5, description: "A bag of high-quality flour perfect for baking bread, cakes, and pastries." },
+  { name: "Sugar", price: 10, description: "A bag of pure, white sugar perfect for baking and decorating." },
+  { name: "Butter", price: 15, description: "A block of high-quality butter perfect for baking and cooking." },
+  { name: "Eggs", price: 8, description: "A dozen fresh eggs perfect for baking and cooking." },
+  { name: "Baking Powder", price: 12, description: "A can of high-quality baking powder perfect for leavening bread and cakes." },
+  { name: "Vanilla Extract", price: 18, description: "A bottle of high-quality vanilla extract perfect for flavoring baked goods and desserts." }
+                ];
+                
+                const shopList = document.createElement("div");
+                shopList.className = "shop-list";
+                
+                items.forEach((item) => {
+                    const itemElement = document.createElement("div");
+                    itemElement.className = "item";
+                    
+                    const itemNameElement = document.createElement("p");
+                    itemNameElement.className = "item-name";
+                    itemNameElement.textContent = item.name;
+                    
+                    const itemPriceElement = document.createElement("p");
+                    itemPriceElement.className = "item-price";
+                    itemPriceElement.textContent = `Price: ${item.price} gold`;
+                    
+                    const itemDescriptionElement = document.createElement("p");
+                    itemDescriptionElement.className = "item-description";
+                    itemDescriptionElement.textContent = item.description;
+                    
+                    itemElement.appendChild(itemNameElement);
+                    itemElement.appendChild(itemPriceElement);
+                    itemElement.appendChild(itemDescriptionElement);
+                    
+                    shopList.appendChild(itemElement);
+                });
+                
+                document.querySelector(".shop").appendChild(shopList);
+            </script>
+        </div>
+    </div>
+</body>
+</html>

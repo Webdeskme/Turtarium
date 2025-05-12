@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtarium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./tavern.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .event {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+        
+        .event-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            background-color: #3e8e41;
+        }
+        
+        @media (max-width: 768px) {
+            .event-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event">
+        <script>
+            const conversations = [
+                "You strike up a conversation with a scholar who has spent years studying the ancient lore of Cavewood. What do they reveal about the town's history, and how does it shape your understanding of the place?",
+  "A group of travelers arrive in town, seeking information about the domed sanctum and its rumored ancient wisdom. What do they hope to find, and how do you help them on their quest?",
+  "You attend a lecture by a renowned mystic, who speaks about the secrets of the universe and the mysteries of the human heart. What do you learn, and how does it challenge your own beliefs?",
+  "You meet a local artisan who creates intricate, symbolic carvings that adorn the town's buildings. What inspires their work, and how do you see the town's devotion to knowledge and memory reflected in their craft?",
+  "A debate erupts in the tavern about the role of knowledge and power in shaping the world. What are the arguments for and against, and how do you contribute to the discussion?",
+  "You discover a hidden text in the tavern's library, containing cryptic notes and diagrams that hint at a long-forgotten secret. What does it say, and how do you decipher its meaning?",
+  "A group of scholars gather to discuss the latest discoveries in the field of astronomy, and you are invited to join their conversation. What do you learn, and how does it expand your understanding of the universe?",
+  "You are approached by a member of the town's council, who seeks your opinion on a proposed new initiative to preserve and promote the town's cultural heritage. What do you say, and how do you justify your position?",
+  "A traveling bard performs in the tavern, singing songs and telling tales of Cavewood's history and mythology. What do you learn from their performance, and how does it inspire you?",
+  "You meet a young apprentice who is learning the art of memory-keeping from a master scholar. What do you learn about their craft, and how does it reflect the town's values?",
+  "The tavern is filled with the smell of old books and parchment, and you are offered a chance to explore the town's famous scriptorium. What do you discover, and how does it deepen your appreciation for the town's devotion to knowledge?",
+  "A group of mystics gather to perform a ritual, seeking to tap into the ancient wisdom of the domed sanctum. What do you learn from their ritual, and how does it challenge your understanding of the world?",
+  "You are invited to join a group of scholars on a expedition to explore the surrounding forest, seeking to uncover new knowledge and insights. What do you discover, and how does it expand your understanding of the natural world?",
+  "You meet a local historian who has spent years studying the life and legacy of King Eldric the Keeper. What do you learn about the town's founder, and how does it shape your understanding of Cavewood's values and traditions?",
+  "The tavern is filled with quiet conversation and contemplation, as patrons reflect on the town's motto: 'Knowledge is the keeper of the soul.' What do you think this phrase means, and how does it reflect the town's values?",
+  "You discover a hidden garden in the town, filled with rare and exotic plants that are said to have healing properties. What do you learn about the garden, and how does it reflect the town's devotion to knowledge and memory?"
+            ];
+            
+            const randomConversation = conversations[Math.floor(Math.random() * conversations.length)];
+            document.write(`<p class="event-text">${randomConversation}</p>`);
+            document.write(`<button class="button" onclick="window.location.href='./bellhorn.html';">Head to Town</button>`);
+        </script>
+    </div>
+</body>
+</html>
