@@ -52,15 +52,14 @@
             <script>
                 const items = [
                     { name: "Iron Axe", price: 15, description: "A sturdy axe for chopping wood and defending yourself." },
-{ name: "Leather Tunic", price: 25, description: "A protective tunic made of leather, providing moderate defense against attacks." },
-{ name: "Healing Salve", price: 10, description: "A medicinal salve that can heal minor wounds and soothe burns." },
-{ name: "Wheat Bread", price: 5, description: "A loaf of freshly baked bread, perfect for sustaining yourself on long journeys." },
-{ name: "Iron Rations", price: 8, description: "A pack of dried meat and biscuits, providing sustenance for several days." },
-{ name: "Torch", price: 3, description: "A wooden torch with a flammable head, providing light in dark environments." },
-{ name: "Water Skin", price: 12, description: "A leather skin for carrying water, perfect for staying hydrated on long journeys." },
-{ name: "Rope", price: 6, description: "A length of sturdy rope, useful for climbing, securing cargo, or creating makeshift repairs." },
-{ name: "Herbal Remedy", price: 18, description: "A concoction of herbs and spices that can cure ailments such as fever and poison." },
-{ name: "Lantern", price: 20, description: "A metal lantern with a candle inside, providing a reliable source of light." }
+{ name: "Turtarium: Adult", price: "adultColor", description: "Adult coloring book page for the Turtarium title page." },
+{ name: "Turtarium: Child", price: "childColor", description: "Child coloring book page for the Turtarium title page." },
+{ name: "The Great Dip: Adult", price: "dipAdultColor", description: "Adult coloring book page for The Great Dip." },
+{ name: "The Great Dip: Child", price: "dipCildColor", description: "Child coloring book page for The Great Dip." },
+{ name: "The Great Lift: Adult", price: "liftAdultColor", description: "Adult coloring book page for The Great Lift." },
+{ name: "The Great Lift: Child", price: "liftChildColor", description: "Child coloring book page for The Great Lift." },
+{ name: "Denstraw: Adult", price: "DenstrawAdultColor", description: "Adult coloring book page for Denstraw." },
+{ name: "Denstraw: Child", price: "DenstrawChildColor", description: "Child coloring book page for Denstraw." }
                 ];
                 
                 const shopList = document.createElement("div");
@@ -72,11 +71,8 @@
                     
                     const itemNameElement = document.createElement("p");
                     itemNameElement.className = "item-name";
-                    itemNameElement.textContent = item.name;
+                    itemNameElement.textContent = `<a htrf="../imgs/${item.price}.png" target="_blank">${item.name}</a>`;
                     
-                    const itemPriceElement = document.createElement("p");
-                    itemPriceElement.className = "item-price";
-                    itemPriceElement.textContent = `Price: ${item.price} gold`;
                     
                     const itemDescriptionElement = document.createElement("p");
                     itemDescriptionElement.className = "item-description";
