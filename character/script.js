@@ -116,10 +116,10 @@ form.addEventListener('submit', (e) => {
     //if (skill3 === 'strength') strength += 2;
     if (disability === 'strength') strength -= 2;
 
-    if (skill1 === 'dexterity') agility += 2;
-    //if (skill2 === 'agility') agility += 2;
-    //if (skill3 === 'agility') agility += 2;
-    if (disability === 'dexterity') agility -= 2;
+    if (skill1 === 'dexterity') dexterity += 2;
+    //if (skill2 === 'dexterity') dexterity += 2;
+    //if (skill3 === 'dexterity') dexterity += 2;
+    if (disability === 'dexterity') dexterity -= 2;
 
     if (skill1 === 'intelligence') intelligence += 2;
     //if (skill2 === 'intelligence') intelligence += 2;
