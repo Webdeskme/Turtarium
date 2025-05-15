@@ -94,7 +94,7 @@ form.addEventListener('submit', (e) => {
             intelligence += 1;
             charisma += 1;
             break;
-        case 'aviari':
+        case 'avairi':
             dexterity += 2;
             charisma += 1;
             intelligence -= 1;
@@ -147,7 +147,7 @@ form.addEventListener('submit', (e) => {
     if(race == 'human'){
 		rc = 'Like Merrows are not very versital biologicly speaking. They can not fly or swim well, or live underwater outside of the underwater Haydori cities. What they lack in naturally ability they make up for in intelegance. They are very resourcefull and can build things to help them suceed.';
 	}
-	if(race == 'aviari'){
+	if(race == 'avairi'){
 		rc = 'Part reptile and part bird. This race is able to take to the skies. They do not like to get wet, which has been a major disadvantage for a planet that is technically all ocean.';
 	}
 	if(race == 'haydori'){
