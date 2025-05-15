@@ -70,7 +70,13 @@
                     
                     const itemNameElement = document.createElement("p");
                     itemNameElement.className = "item-name";
-                    itemNameElement.textContent = '<a htrf="../imgs/' + item.price + '.png" target="_blank">' + item.name + '</a>';
+                    
+                    const linkElement = document.createElement("a");
+                    linkElement.href = "../imgs/" + item.price + ".png";
+                    linkElement.target = "_blank";
+                    linkElement.textContent = item.name;
+                    
+                    itemNameElement.appendChild(linkElement);
                     
                     
                     const itemDescriptionElement = document.createElement("p");
