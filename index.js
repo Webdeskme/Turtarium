@@ -34,7 +34,7 @@ config = {
 		let begin = this.add.image(1000, 400, 'rulesT').setInteractive({ useHandCursor: true  }).setScale(0.75);
 		let autism = this.add.image(150, 50, 'autism').setInteractive({ useHandCursor: true  }).setScale(0.75);
 		let privacy = this.add.image(175, 600, 'privacy').setInteractive({ useHandCursor: true  }).setScale(0.5);
-		let privacy = this.add.image(960, 50, 'rpmg').setInteractive({ useHandCursor: true  }).setScale(0.5);
+		let rpmg = this.add.image(960, 50, 'rpmg').setInteractive({ useHandCursor: true  }).setScale(0.5);
 		title.on('pointerdown', function(pointer) {
 			window.location.href = './map.html';
 		}, this);
