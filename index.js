@@ -23,6 +23,7 @@ config = {
 	this.load.image('rulesT', 'imgs/rulesT.png');
 	this.load.image('autism', 'imgs/autism.png');
 	this.load.image('privacy', 'imgs/privacy.png');
+	this.load.image('rpmg', 'imgs/rpmg.png');
     }
 
     function create ()
@@ -33,6 +34,7 @@ config = {
 		let begin = this.add.image(1000, 400, 'rulesT').setInteractive({ useHandCursor: true  }).setScale(0.75);
 		let autism = this.add.image(150, 50, 'autism').setInteractive({ useHandCursor: true  }).setScale(0.75);
 		let privacy = this.add.image(175, 600, 'privacy').setInteractive({ useHandCursor: true  }).setScale(0.5);
+		let privacy = this.add.image(1000, 50, 'rpmg').setInteractive({ useHandCursor: true  }).setScale(0.5);
 		title.on('pointerdown', function(pointer) {
 			window.location.href = './map.html';
 		}, this);
@@ -47,6 +49,9 @@ config = {
 		}, this);
 		privacy.on('pointerdown', function(pointer) {
 			window.open('https://theautismproject.org/privacy-policy', '_blank');
+		}, this);
+		rpmg.on('pointerdown', function(pointer) {
+			window.location.href = './rpmg/index.html';
 		}, this);
     }
 

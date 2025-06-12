@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Audio Playlist</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --button-bg: #1db954;
+      --item-bg: #1e1e1e;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --button-bg: #1db954;
+      --item-bg: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    #controls button {
+      background: var(--button-bg);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    li {
+      background-color: var(--item-bg);
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    li.active {
+      border: 2px solid var(--button-bg);
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    #progressBarContainer {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto 0;
+      background: #333;
+      border-radius: 5px;
+      height: 10px;
+    }
+
+    #progressBar {
+      width: 0%;
+      height: 100%;
+      background: var(--button-bg);
+      border-radius: 5px;
+      transition: width 0.3s;
+    }
+
+    .time-display {
+      text-align: center;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    .volume-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .track-image {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+    }
+
+    li.active .track-image {
+      display: block;
+    }
+
+    @media (min-width: 600px) {
+      li {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      li span {
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+
+      .track-image {
+        max-width: 150px;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Audio Playlist</h1>
+  <div id="controls">
+	<a href="../index.html">Back to Home</a>
+    <button id="playAll">Play</button>
+    <button id="pauseAll">Pause</button>
+    <button id="toggleTheme">Toggle Theme</button>
+  </div>
+  <ul id="playlist"></ul>
+  <div id="progressBarContainer"><div id="progressBar"></div></div>
+  <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+  <div class="volume-container">
+    <label for="volumeControl">Volume:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <script>
+    const audioGroups = [
+      ['audio1-1.mp3', 'audio1-2.mp3', 'audio1-3.mp3'],
+      ['audio2-1.mp3', 'audio2-2.mp3', 'audio2-3.mp3'],
+      ['audio3-1.mp3', 'audio3-2.mp3', 'audio3-3.mp3'],
+      ['audio4-1.mp3', 'audio4-2.mp3', 'audio4-3.mp3'],
+      ['audio5-1.mp3', 'audio5-2.mp3', 'audio5-3.mp3'],
+      ['audio6-1.mp3', 'audio6-2.mp3', 'audio6-3.mp3'],
+      ['audio7-1.mp3', 'audio7-2.mp3', 'audio7-3.mp3']
+    ];
+
+    const staticStart = 'intro.mp3';
+    const staticEnd = 'outro.mp3';
+
+    const trackTitles = {
+      'intro.mp3': 'Welcome Intro',
+      'outro.mp3': 'Thank You Outro',
+      'audio1-1.mp3': 'Chill Start', 'audio1-2.mp3': 'Smooth Start', 'audio1-3.mp3': 'Energetic Start',
+      'audio2-1.mp3': 'Mood Boost', 'audio2-2.mp3': 'Sunset Vibes', 'audio2-3.mp3': 'Uplifting Beat',
+      'audio3-1.mp3': 'Ambient Echo', 'audio3-2.mp3': 'Evening Tune', 'audio3-3.mp3': 'Peaceful Wind',
+      'audio4-1.mp3': 'Vibe Shift', 'audio4-2.mp3': 'Break Point', 'audio4-3.mp3': 'Daylight Spin',
+      'audio5-1.mp3': 'Pulse Path', 'audio5-2.mp3': 'Downtempo Flow', 'audio5-3.mp3': 'Urban Air',
+      'audio6-1.mp3': 'Highnote', 'audio6-2.mp3': 'Hopeful Rise', 'audio6-3.mp3': 'Calm Control',
+      'audio7-1.mp3': 'Gentle Wrap', 'audio7-2.mp3': 'Closing Light', 'audio7-3.mp3': 'End Echo'
+    };
+
+    function getTitleFromFilename(filename) {
+      return trackTitles[filename] || filename;
+    }
+
+    function getImagePath(filename) {
+      const name = filename.split('.')[0];
+      return `images/${name}.jpg`;
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    const playlistContainer = document.getElementById('playlist');
+    const audioElements = [];
+    const listItems = [];
+
+    function addTrack(labelText, src) {
+      const listItem = document.createElement('li');
+      const label = document.createElement('span');
+      label.textContent = `${labelText}: ${getTitleFromFilename(src)}`;
+      const img = document.createElement('img');
+      img.className = 'track-image';
+      img.src = getImagePath(src);
+      const audio = document.createElement('audio');
+      audio.controls = true;
+      audio.src = src;
+      listItem.appendChild(img);
+      listItem.appendChild(label);
+      listItem.appendChild(audio);
+      playlistContainer.appendChild(listItem);
+      audioElements.push(audio);
+      listItems.push(listItem);
+    }
+
+    function getRandomAudio(arr) {
+      const index = Math.floor(Math.random() * arr.length);
+      return arr[index];
+    }
+
+    addTrack("Intro", staticStart);
+    const firstRandom = getRandomAudio(audioGroups[0]);
+    addTrack("Track 1", firstRandom);
+
+    for (let i = 1; i < audioGroups.length; i++) {
+      const randomFile = getRandomAudio(audioGroups[i]);
+      addTrack(`Track ${i + 1}`, randomFile);
+    }
+
+    addTrack("Track Repeat", firstRandom);
+    addTrack("Outro", staticEnd);
+
+    const progressBar = document.getElementById('progressBar');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const volumeControl = document.getElementById('volumeControl');
+
+    let currentIndex = 0;
+
+    function updateProgress(index) {
+      const percentage = (index / (audioElements.length - 1)) * 100;
+      progressBar.style.width = `${percentage}%`;
+    }
+
+    function highlightTrack(index) {
+      listItems.forEach((li, i) => {
+        li.classList.toggle('active', i === index);
+      });
+    }
+
+    function updateTimeDisplay(audio) {
+      audio.addEventListener('timeupdate', () => {
+        const current = formatTime(audio.currentTime);
+        const duration = formatTime(audio.duration || 0);
+        timeDisplay.textContent = `${current} / ${duration}`;
+      });
+    }
+
+    for (let i = 0; i < audioElements.length - 1; i++) {
+      audioElements[i].addEventListener('ended', () => {
+        updateProgress(i + 1);
+        highlightTrack(i + 1);
+        audioElements[i + 1].play();
+      });
+      updateTimeDisplay(audioElements[i]);
+    }
+    updateTimeDisplay(audioElements[audioElements.length - 1]);
+
+    document.getElementById('playAll').addEventListener('click', () => {
+      currentIndex = 0;
+      highlightTrack(currentIndex);
+      audioElements[currentIndex].play();
+    });
+
+    document.getElementById('pauseAll').addEventListener('click', () => {
+      audioElements.forEach(audio => audio.pause());
+    });
+
+    volumeControl.addEventListener('input', () => {
+      audioElements.forEach(audio => audio.volume = volumeControl.value);
+    });
+
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>
