@@ -73,17 +73,6 @@
       border: 2px solid var(--button-bg);
     }
 
-    .track-text {
-      display: none;
-      margin-top: 10px;
-      font-style: italic;
-      color: #ccc;
-    }
-
-    .track-text.active {
-      display: block;
-    }
-
     audio {
       width: 100%;
     }
@@ -116,6 +105,18 @@
       margin-top: 20px;
     }
 
+    .track-image {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+    }
+
+    li.active .track-image {
+      display: block;
+    }
+
     @media (min-width: 600px) {
       li {
         flex-direction: row;
@@ -128,8 +129,9 @@
         margin-right: 20px;
       }
 
-      .track-text {
-        width: 100%;
+      .track-image {
+        max-width: 150px;
+        margin-right: 10px;
       }
     }
   </style>
@@ -137,6 +139,7 @@
 <body>
   <h1>Random Audio Playlist</h1>
   <div id="controls">
+	<a href="../index.html">Back to Home</a>
     <button id="playAll">Play</button>
     <button id="pauseAll">Pause</button>
     <button id="toggleTheme">Toggle Theme</button>
@@ -175,62 +178,41 @@
       'audio7-1.mp3': 'Gentle Wrap', 'audio7-2.mp3': 'Closing Light', 'audio7-3.mp3': 'End Echo'
     };
 
-    const trackTexts = {
-      'Welcome Intro': 'Welcome to your curated journey. Sit back and enjoy the sounds ahead.',
-      'Thank You Outro': 'Thank you for listening. We hope you had a peaceful experience.',
-      'Chill Start': 'Ease into your day with a laid-back vibe.',
-      'Smooth Start': 'A smooth beginning to flow into focus.',
-      'Energetic Start': 'Let the energy move you forward.',
-      'Mood Boost': 'Brighten your mood with this lively track.',
-      'Sunset Vibes': 'Let the music paint the colors of dusk.',
-      'Uplifting Beat': 'Feel your spirit rise with every note.',
-      'Ambient Echo': 'Wander through echoes of tranquility.',
-      'Evening Tune': 'A calming breeze for evening reflection.',
-      'Peaceful Wind': 'Flow gently with a calming current.',
-      'Vibe Shift': 'Shift your energy with sonic warmth.',
-      'Break Point': 'Pause and breathe through this break.',
-      'Daylight Spin': 'A fresh rhythm for your bright moments.',
-      'Pulse Path': 'Let this steady pulse guide your path.',
-      'Downtempo Flow': 'Relax and unwind with subtle grooves.',
-      'Urban Air': 'Catch the beat of the city’s breath.',
-      'Highnote': 'Rise up on high with this inspiring sound.',
-      'Hopeful Rise': 'Climb softly into optimism.',
-      'Calm Control': 'Regain serenity with this grounded flow.',
-      'Gentle Wrap': 'Wrap up gently with soothing tones.',
-      'Closing Light': 'End the journey with a glow of light.',
-      'End Echo': 'Let the final echoes linger with you.'
-    };
-
     function getTitleFromFilename(filename) {
       return trackTitles[filename] || filename;
+    }
+
+    function getImagePath(filename) {
+      const name = filename.split('.')[0];
+      return `images/${name}.jpg`;
+    }
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }
 
     const playlistContainer = document.getElementById('playlist');
     const audioElements = [];
     const listItems = [];
-    const textBlocks = [];
 
     function addTrack(labelText, src) {
       const listItem = document.createElement('li');
       const label = document.createElement('span');
-      const title = getTitleFromFilename(src);
-      label.textContent = `${labelText}: ${title}`;
+      label.textContent = `${labelText}: ${getTitleFromFilename(src)}`;
+      const img = document.createElement('img');
+      img.className = 'track-image';
+      img.src = getImagePath(src);
       const audio = document.createElement('audio');
       audio.controls = true;
       audio.src = src;
-
-      const textBlock = document.createElement('div');
-      textBlock.className = 'track-text';
-      textBlock.textContent = trackTexts[title] || '';
-
+      listItem.appendChild(img);
       listItem.appendChild(label);
       listItem.appendChild(audio);
-      listItem.appendChild(textBlock);
       playlistContainer.appendChild(listItem);
-
       audioElements.push(audio);
       listItems.push(listItem);
-      textBlocks.push(textBlock);
     }
 
     function getRandomAudio(arr) {
@@ -244,7 +226,7 @@
 
     for (let i = 1; i < audioGroups.length; i++) {
       const randomFile = getRandomAudio(audioGroups[i]);
-      addTrack(`Track ${i + 1}", randomFile);
+      addTrack(`Track ${i + 1}`, randomFile);
     }
 
     addTrack("Track Repeat", firstRandom);
@@ -264,14 +246,7 @@
     function highlightTrack(index) {
       listItems.forEach((li, i) => {
         li.classList.toggle('active', i === index);
-        textBlocks[i].classList.toggle('active', i === index);
       });
-    }
-
-    function formatTime(seconds) {
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }
 
     function updateTimeDisplay(audio) {
